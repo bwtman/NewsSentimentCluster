@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Topic Clusters - News Trend Analyzer{% endblock %}
+
+{% block content %}
+<h1>Topic Clusters</h1>
+<div class="radio-button">
+    <label><input type="radio" name="time_range" value="1_day" checked><span class="custom-radio"></span> 1 Day</label>
+    <label><input type="radio" name="time_range" value="1_week"><span class="custom-radio"></span> 1 Week</label>
+    <label><input type="radio" name="time_range" value="1_month"><span class="custom-radio"></span> 1 Month</label>
+</div>
+<div id="loadingMessage" style="display: none; margin-top: 20px;">Fetching the news...</div>
+<div id="clusterContainer"></div>
+
+
+<script src="{{ url_for('static', path='scripts/clusterNews.js') }}"></script>
+{% endblock %}
